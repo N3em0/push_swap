@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:57:08 by egache            #+#    #+#             */
-/*   Updated: 2025/02/04 15:30:15 by teatime          ###   ########.fr       */
+/*   Updated: 2025/02/19 16:45:55 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ char				*ft_strchr(const char *str, int c);
 char				*ft_strrchr(const char *str, int c);
 unsigned int		ft_strlcpy(char *dest, const char *src, unsigned int size);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strcmp(const char *s1, const char *s2);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 char				*ft_strnstr(const char *str, const char *to_find, size_t n);

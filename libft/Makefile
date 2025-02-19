@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: teatime <teatime@student.42.fr>            +#+  +:+       +#+         #
+#    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 17:59:37 by teatime           #+#    #+#              #
-#    Updated: 2025/02/14 17:32:23 by teatime          ###   ########.fr        #
+#    Updated: 2025/02/19 16:45:28 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ ft_putnbr_fd.c          \
 ft_putstr_fd.c          \
 ft_split.c              \
 ft_strchr.c             \
+ft_strcmp.c				\
 ft_strdup.c             \
 ft_striteri.c           \
 ft_strjoin.c            \

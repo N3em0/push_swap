@@ -6,11 +6,11 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:38:17 by egache            #+#    #+#             */
-/*   Updated: 2024/11/27 16:35:28 by egache           ###   ########.fr       */
+/*   Updated: 2025/02/19 18:13:35 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//#include "libft.h"
 
 int	ft_isdigit(int c)
 {
@@ -25,3 +25,11 @@ int	main(void)
 		printf("%d", ft_str_is_numeric(str));
 
 }*/
+
+// #include <stdio.h>
+// int main(int argc, char **argv)
+// {
+// 	(void)argc;
+
+// 	printf("isdigit value : %d", ft_isdigit(argv[1][0]));
+// }

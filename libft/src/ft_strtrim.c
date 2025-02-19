@@ -6,13 +6,13 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 12:51:48 by egache            #+#    #+#             */
-/*   Updated: 2024/11/27 16:37:20 by egache           ###   ########.fr       */
+/*   Updated: 2025/02/19 16:54:40 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_strcmp(const char *set, char c)
+static int	ft_strcmpc(const char *set, char c)
 {
 	size_t	i;
 
@@ -27,7 +27,7 @@ static int	ft_start(const char *s1, const char *set)
 	int	start;
 
 	start = 0;
-	while (s1[start] && ft_strcmp(set, s1[start]) == 0)
+	while (s1[start] && ft_strcmpc(set, s1[start]) == 0)
 		start++;
 	return (start);
 }
@@ -37,7 +37,7 @@ static int	ft_end(const char *s1, const char *set, int start)
 	int	len;
 
 	len = ft_strlen((char *)s1);
-	while (len > start && ft_strcmp(set, s1[len - 1]) == 0)
+	while (len > start && ft_strcmpc(set, s1[len - 1]) == 0)
 		len--;
 	return (len);
 }
