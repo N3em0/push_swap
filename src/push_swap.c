@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:13:23 by teatime           #+#    #+#             */
-/*   Updated: 2025/02/19 20:12:13 by egache           ###   ########.fr       */
+/*   Updated: 2025/02/20 18:11:08 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,29 @@ int	main(int argc, char **argv)
 	t_ps	*ps;
 
 	ps = ft_calloc(1, sizeof(t_ps));
+	ps->stack = ft_calloc(1, sizeof(t_stack));
 	if (!ps)
 		return (1);
-	valid_argument(argc, argv, ps);
-	// printf("argv[1] : %s", argv[1]);
+	parsing(argc, argv, ps);
 	// stack_initialisation(argc, argv, ps);
-	free_exit(ps, "yessir", EXIT_SUCCESS);
+	free_exit(ps, "yessir\n", EXIT_SUCCESS);
 	return (0);
 }
-void	valid_argument(int argc, char **argv, t_ps *ps)
+void	parsing(int argc, char **argv, t_ps *ps)
+{
+	if (argc < 2)
+		free_exit(ps, "Error\nWrong number of arguments", EXIT_FAILURE);
+	else if (argc == 2)
+		handle_single_argument(argv[1], ps);
+	else
+		handle_multiple_argument(argc - 1, argv + 1, ps);
+}
+void	check_arguments(int argc, char **argv, t_ps *ps)
 {
 	int	i;
 
-	if (argc < 2)
-		free_exit(ps, "Error\nWrong number of arguments", EXIT_FAILURE);
 	i = 0;
-	while (++i < argc)
+	while (i < argc)
 	{
 		if (empty_argument(argv[i]) == 1)
 			free_exit(ps, "Error\nEmpty argument", EXIT_FAILURE);
@@ -41,25 +48,31 @@ void	valid_argument(int argc, char **argv, t_ps *ps)
 			free_exit(ps, "Error\nWrong arguments", EXIT_FAILURE);
 		if (overflow_argument(argv[i]) == 1)
 			free_exit(ps, "Error\nArgument above limit", EXIT_FAILURE);
-		if (i > 1 && duplicate_argument(argv[i], argv[i - 1]) == 1)
+		if (duplicate_argument(argc - 1, argv, i) == 1)
 			free_exit(ps, "Error\nDuplicate number", EXIT_FAILURE);
+		i++;
 	}
 	return ;
 }
-
-int	overflow_argument(char *str)
+void	handle_multiple_argument(int argc, char **argv, t_ps *ps)
 {
-	long	nb;
-
-	nb = ft_atoi_argument(str);
-	printf("nb value : %ld\n\n", nb);
-	if (nb > INT_MAX || nb <= INT_MIN)
-		return (1);
-	else
-		return (0);
+	check_arguments(argc, argv, ps);
+	stack_initialisation(ps, argc, argv);
 }
 
-long	ft_atoi_argument(char *str)
+void	handle_single_argument(char *str, t_ps *ps)
+{
+	ps->strslen = 0;
+	ps->strs = ft_split(str, ' ');
+	if (ps->strs == NULL)
+		free_exit(ps, "Error\nMalloc failed", EXIT_FAILURE);
+	while (ps->strs[ps->strslen] != NULL)
+		ps->strslen++;
+	check_arguments(ps->strslen, ps->strs, ps);
+	stack_initialisation(ps, ps->strslen, ps->strs);
+}
+
+long	ft_atol_argument(char *str)
 {
 	int		i;
 	int		sign;
@@ -82,54 +95,3 @@ long	ft_atoi_argument(char *str)
 	}
 	return (result * sign);
 }
-
-int	duplicate_argument(char *str1, char *str2)
-{
-	printf("allo ?\n");
-	if (ft_atoi_argument(str1) == ft_atoi_argument(str2))
-		return (1);
-	else
-		return (0);
-}
-
-int	invalid_argument(char *str)
-{
-	int	i;
-	int	minusc;
-	int	nbc;
-
-	i = 0;
-	minusc = 0;
-	nbc = 0;
-	while (str[i] != '\0' && str[i])
-	{
-		if (str[i] == '-' && ft_isdigit(str[i + 1]) == 1)
-		{
-			if (minusc++ == 0)
-				i++;
-		}
-		else if (ft_isdigit(str[i]) == 1 && nbc < 1)
-		{
-			while (ft_isdigit(str[i]) == 1)
-				i++;
-			nbc++;
-		}
-		else if (str[i] == ' ')
-			i++;
-		else
-			return (1);
-	}
-	return (0);
-}
-
-int	empty_argument(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] != '\0' && str[i])
-		return (0);
-	else
-		return (1);
-}
-//

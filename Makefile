@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 15:58:15 by egache            #+#    #+#              #
-#    Updated: 2025/02/18 19:14:58 by egache           ###   ########.fr        #
+#    Updated: 2025/02/20 18:11:31 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,8 @@ SRC_DIR	:=	src
 SRC		:=					\
 push_swap.c					\
 parsing.c					\
+check_argument.c			\
+stack_initialisation.c		\
 free_exit.c					\
 todump.c					\
 
@@ -45,8 +47,6 @@ INCLUDE	:=	$(addprefix -I,$(HEAD)) -MMD -MP
 LIBDIR	:=	$(addprefix -L,$(dir $(LIBS_TARGET)))
 LIBNAME	:=	$(addprefix -l,$(LIBS))
 
-MAKEFLAGS	+=	--silent --no-print-directory
-
 DIR_DUP	=	mkdir -p $(@D)
 
 RM	:=	rm -f
@@ -56,7 +56,7 @@ all	:	$(NAME)
 
 $(NAME)	:	$(OBJ) $(LIBS_TARGET)
 			$(CC) $(LIBDIR) $(OBJ) $(LIBNAME)
-			$(info CREATED $(NAME))
+			#$(info CREATED $(NAME))
 
 $(LIBS_TARGET)	:
 			@$(MAKE) -C $(@D)
@@ -80,7 +80,7 @@ fclean:	clean
 			$(MAKE) fclean -C get_next_line
 			$(MAKE) fclean -C libft
 			$(MAKE) fclean -C ft_printf
-			$(info CLEANED $(NAME))
+			#$(info CLEANED $(NAME))
 
 re:
 			$(MAKE) fclean
