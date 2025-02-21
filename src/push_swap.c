@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:13:23 by teatime           #+#    #+#             */
-/*   Updated: 2025/02/20 18:11:08 by egache           ###   ########.fr       */
+/*   Updated: 2025/02/21 20:18:57 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,218 @@
 int	main(int argc, char **argv)
 {
 	t_ps	*ps;
+	int		i;
 
 	ps = ft_calloc(1, sizeof(t_ps));
-	ps->stack = ft_calloc(1, sizeof(t_stack));
 	if (!ps)
 		return (1);
+	ps->stack = ft_calloc(1, sizeof(t_stack));
+	if (!ps->stack)
+		return (1);
 	parsing(argc, argv, ps);
-	// stack_initialisation(argc, argv, ps);
+	// ------------- test pb ------------
+	ft_printf("\n\n");
+	pb(ps->stack);
+	ft_printf("pb\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->a[i]);
+		i++;
+	}
+	ft_printf("\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->b[i]);
+		i++;
+	}
+	ft_printf("\n\n");
+	pb(ps->stack);
+	ft_printf("pb\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->a[i]);
+		i++;
+	}
+	ft_printf("\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->b[i]);
+		i++;
+	}
+	ft_printf("\n\n");
+	pb(ps->stack);
+	pb(ps->stack);
+	ft_printf("pb\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->a[i]);
+		i++;
+	}
+	ft_printf("\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->b[i]);
+		i++;
+	}
+	ft_printf("\n\n");
+	// ------------ test ra
+	//pb(ps->stack);
+	ra(ps->stack);
+	ft_printf("ra\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->a[i]);
+		i++;
+	}
+	ft_printf("\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->b[i]);
+		i++;
+	}
+	ft_printf("\n\n");
+	ra(ps->stack);
+	ft_printf("ra\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->a[i]);
+		i++;
+	}
+	ft_printf("\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->b[i]);
+		i++;
+	}
+	ft_printf("\n\n");
+	// pb(ps->stack);
+	// ft_printf("pb\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->a[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->b[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n\n");
+	// pa(ps->stack);
+	// ft_printf("pa\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->a[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->b[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n\n");
+	// pa(ps->stack);
+	// ft_printf("pa\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->a[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->b[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n\n");
+	// pa(ps->stack);
+	// ft_printf("pa\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->a[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->b[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
+	// sb(ps->stack);
+	// ft_printf("sb\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->a[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->b[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
+	// ss(ps->stack);
+	// ft_printf("ss\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->a[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->b[i]);
+	// 	i++;
+	// }
+	ft_printf("\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("(%d),", ps->stack->b[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n\n");
+	// pa(ps->stack);
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->a[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("(%d),", ps->stack->b[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n\n");
 	free_exit(ps, "yessir\n", EXIT_SUCCESS);
 	return (0);
 }
@@ -35,41 +240,45 @@ void	parsing(int argc, char **argv, t_ps *ps)
 	else
 		handle_multiple_argument(argc - 1, argv + 1, ps);
 }
-void	check_arguments(int argc, char **argv, t_ps *ps)
+void	check_arguments(t_ps *ps, char **args)
 {
 	int	i;
 
 	i = 0;
-	while (i < argc)
+	while (i < ps->stack->len)
 	{
-		if (empty_argument(argv[i]) == 1)
+		if (empty_argument(args[i]) == 1)
 			free_exit(ps, "Error\nEmpty argument", EXIT_FAILURE);
-		if (invalid_argument(argv[i]) == 1)
+		if (invalid_argument(args[i]) == 1)
 			free_exit(ps, "Error\nWrong arguments", EXIT_FAILURE);
-		if (overflow_argument(argv[i]) == 1)
+		if (overflow_argument(args[i]) == 1)
 			free_exit(ps, "Error\nArgument above limit", EXIT_FAILURE);
-		if (duplicate_argument(argc - 1, argv, i) == 1)
+		if (duplicate_argument(ps->stack->len - 1, args, i) == 1)
 			free_exit(ps, "Error\nDuplicate number", EXIT_FAILURE);
 		i++;
 	}
 	return ;
 }
-void	handle_multiple_argument(int argc, char **argv, t_ps *ps)
+void	handle_multiple_argument(int len, char **args, t_ps *ps)
 {
-	check_arguments(argc, argv, ps);
-	stack_initialisation(ps, argc, argv);
+	ps->stack->len = len;
+	check_arguments(ps, args);
+	stack_initialisation(ps, args);
 }
 
-void	handle_single_argument(char *str, t_ps *ps)
+void	handle_single_argument(char *arg, t_ps *ps)
 {
-	ps->strslen = 0;
-	ps->strs = ft_split(str, ' ');
-	if (ps->strs == NULL)
+	t_stack	*stack;
+
+	stack = ps->stack;
+	stack->len = 0;
+	stack->args = ft_split(arg, ' ');
+	if (stack->args == NULL)
 		free_exit(ps, "Error\nMalloc failed", EXIT_FAILURE);
-	while (ps->strs[ps->strslen] != NULL)
-		ps->strslen++;
-	check_arguments(ps->strslen, ps->strs, ps);
-	stack_initialisation(ps, ps->strslen, ps->strs);
+	while (stack->args[stack->len] != NULL)
+		stack->len++;
+	check_arguments(ps, stack->args);
+	stack_initialisation(ps, stack->args);
 }
 
 long	ft_atol_argument(char *str)

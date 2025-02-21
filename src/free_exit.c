@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 19:07:01 by egache            #+#    #+#             */
-/*   Updated: 2025/02/20 17:15:33 by egache           ###   ########.fr       */
+/*   Updated: 2025/02/21 15:08:12 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,29 @@ void	free_exit(t_ps *ps, char *str, int ret)
 		free(ps->stack->a);
 	if (ps->stack->b && ps->stack)
 		free(ps->stack->b);
+	if (ps->stack->indexed && ps->stack)
+		free(ps->stack->indexed);
+	if (ps->stack->presort && ps->stack)
+		free(ps->stack->presort);
+	if (ps->stack->saved && ps->stack)
+		free(ps->stack->saved);
+	if (ps->stack->args)
+	{
+		while (i < ps->stack->len)
+		{
+			if (ps->stack->args[i] != NULL)
+				free(ps->stack->args[i]);
+			i++;
+		}
+		free(ps->stack->args);
+	}
 	if (ps->stack)
 		free(ps->stack);
-	if (ps->strs)
-	{
-		while (i < ps->strslen)
-			free(ps->strs[i++]);
-		free(ps->strs);
-	}
 	if (ps)
 		free(ps);
 	if (str != NULL)
 		ft_putstr_fd(str, 2);
 	exit(ret);
-
 }
 
 // void	free_map(t_ps *ps)

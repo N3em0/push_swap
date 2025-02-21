@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 15:58:15 by egache            #+#    #+#              #
-#    Updated: 2025/02/20 18:11:31 by egache           ###   ########.fr        #
+#    Updated: 2025/02/21 17:50:40 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ parsing.c					\
 check_argument.c			\
 stack_initialisation.c		\
 free_exit.c					\
+operations_swap_push.c		\
+operations_rotate.c			\
 todump.c					\
 
 SRC		:=	$(SRC:%=$(SRC_DIR)/%)

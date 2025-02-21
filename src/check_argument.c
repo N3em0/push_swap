@@ -6,20 +6,20 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:16:31 by egache            #+#    #+#             */
-/*   Updated: 2025/02/20 18:23:19 by egache           ###   ########.fr       */
+/*   Updated: 2025/02/21 14:30:13 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	duplicate_argument(int argc, char **argv, int pos)
+int	duplicate_argument(int len, char **args, int pos)
 {
 	int	i;
 
 	i = 0;
-	while (i < argc)
+	while (i < len)
 	{
-		if (ft_atol_argument(argv[pos]) == ft_atol_argument(argv[i])
+		if (ft_atol_argument(args[pos]) == ft_atol_argument(args[i])
 			&& pos != i)
 			return (1);
 		else
@@ -28,7 +28,7 @@ int	duplicate_argument(int argc, char **argv, int pos)
 	return (0);
 }
 
-int	invalid_argument(char *str)
+int	invalid_argument(char *arg)
 {
 	int	i;
 	int	minusc;
@@ -37,17 +37,17 @@ int	invalid_argument(char *str)
 	i = 0;
 	minusc = 0;
 	nbc = 0;
-	while (str[i] != '\0' && str[i])
+	while (arg[i] != '\0' && arg[i])
 	{
-		if (str[i] == '-' && ft_isdigit(str[i + 1]) == 1 && minusc++ == 0)
+		if (arg[i] == '-' && ft_isdigit(arg[i + 1]) == 1 && minusc++ == 0)
 			i++;
-		else if (ft_isdigit(str[i]) == 1 && nbc < 1)
+		else if (ft_isdigit(arg[i]) == 1 && nbc < 1)
 		{
-			while (ft_isdigit(str[i]) == 1)
+			while (ft_isdigit(arg[i]) == 1)
 				i++;
 			nbc++;
 		}
-		else if (str[i] == ' ')
+		else if (arg[i] == ' ')
 			i++;
 		else
 			return (1);
@@ -55,21 +55,21 @@ int	invalid_argument(char *str)
 	return (0);
 }
 
-int	empty_argument(char *str)
+int	empty_argument(char *arg)
 {
 	int	i;
 
 	i = 0;
-	if (str[i] != '\0' && str[i])
+	if (arg[i] != '\0' && arg[i])
 		return (0);
 	else
 		return (1);
 }
-int	overflow_argument(char *str)
+int	overflow_argument(char *arg)
 {
 	long	nb;
 
-	nb = ft_atol_argument(str);
+	nb = ft_atol_argument(arg);
 	if (nb > INT_MAX || nb <= INT_MIN)
 		return (1);
 	else

@@ -6,24 +6,29 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:08:41 by egache            #+#    #+#             */
-/*   Updated: 2025/02/20 20:23:08 by egache           ###   ########.fr       */
+/*   Updated: 2025/02/21 19:53:40 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stack_initialisation(t_ps *ps, int len, char **tab)
+void	stack_initialisation(t_ps *ps, char **args)
 {
-	if (stack_malloc(ps->stack, len) == 1)
+	if (stack_malloc(ps->stack, ps->stack->len) == 1)
 		free_exit(ps, "Error\nMalloc failed", EXIT_FAILURE);
-	if (stack_fill(ps->stack, len, tab) == 1)
+	if (stack_fill(ps->stack, ps->stack->len, args) == 1)
 		free_exit(ps, "Error\nMalloc failed", EXIT_FAILURE);
+	stack_indexing(ps->stack);
 }
 int	stack_malloc(t_stack *stack, int len)
 {
 	stack->a = malloc((len) * sizeof(int));
 	stack->b = malloc((len) * sizeof(int));
-	if (!stack->a || !stack->a)
+	stack->indexed = malloc((len) * sizeof(int));
+	stack->saved = malloc((len) * sizeof(int));
+	stack->presort = malloc((len) * sizeof(int));
+	if (!stack->a || !stack->b || !stack->indexed || !stack->saved
+		|| !stack->presort)
 		return (1);
 	return (0);
 }
@@ -32,20 +37,62 @@ int	stack_fill(t_stack *stack, int len, char **tab)
 	int	i;
 
 	i = 0;
+	ft_printf("stacksaved\n");
 	while (i < len)
 	{
-		stack->a[i] = (int)ft_atol_argument(tab[i]);
-		ft_printf("[%d],", stack->a[i]);
+		stack->saved[i] = (int)ft_atol_argument(tab[i]);
+		stack->presort[i] = stack->saved[i];
+		stack->b[i] = 0;
+		ft_printf("[%d],", stack->saved[i]);
+		i++;
+	}
+	// ft_printf("\n");
+	ft_sort_int_tab(stack, len);
+	// i = 0;
+	// while (i < len)
+	// {
+	// 	ft_printf("(%d),", stack->presort[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
+	return (0);
+}
+
+int	stack_indexing(t_stack *stack)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < stack->len)
+	{
+		while (j < stack->len)
+		{
+			if (stack->saved[i] == stack->presort[j])
+				stack->a[i] = j + 1;
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	i = 0;
+	ft_printf("\n");
+	ft_printf("stacka\n");
+	while (i < stack->len)
+	{
+		ft_printf("{%d},", stack->a[i]);
 		i++;
 	}
 	ft_printf("\n");
-	ft_sort_int_tab(stack, len);
+	ft_printf("stackb\n");
 	i = 0;
-	while (i < len)
+	while (i < stack->len)
 	{
-		ft_printf("(%d),", stack->a[i]);
+		ft_printf("/%d/,", stack->b[i]);
 		i++;
 	}
+	ft_printf("\n");
 	return (0);
 }
 
@@ -61,11 +108,11 @@ void	ft_sort_int_tab(t_stack *stack, int len)
 		j = i + 1;
 		while (j < len)
 		{
-			if (stack->a[j] < stack->a[i])
+			if (stack->presort[j] < stack->presort[i])
 			{
-				swap = stack->a[j];
-				stack->a[j] = stack->a[i];
-				stack->a[i] = swap;
+				swap = stack->presort[j];
+				stack->presort[j] = stack->presort[i];
+				stack->presort[i] = swap;
 			}
 			j++;
 		}
