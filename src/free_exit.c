@@ -3,26 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   free_exit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 19:07:01 by egache            #+#    #+#             */
-/*   Updated: 2025/02/21 15:08:12 by egache           ###   ########.fr       */
+/*   Updated: 2025/02/22 00:30:24 by teatime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_exit(t_ps *ps, char *str, int ret)
+void free_exit(t_ps *ps, char *str, int ret)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	if (ps->stack->a && ps->stack)
 		free(ps->stack->a);
 	if (ps->stack->b && ps->stack)
 		free(ps->stack->b);
-	if (ps->stack->indexed && ps->stack)
-		free(ps->stack->indexed);
 	if (ps->stack->presort && ps->stack)
 		free(ps->stack->presort);
 	if (ps->stack->saved && ps->stack)

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
+#    By: teatime <teatime@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 15:58:15 by egache            #+#    #+#              #
-#    Updated: 2025/02/21 17:50:40 by egache           ###   ########.fr        #
+#    Updated: 2025/02/22 00:30:51 by teatime          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ stack_initialisation.c		\
 free_exit.c					\
 operations_swap_push.c		\
 operations_rotate.c			\
+operations_reverse.c		\
 todump.c					\
 
 SRC		:=	$(SRC:%=$(SRC_DIR)/%)

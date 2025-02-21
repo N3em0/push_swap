@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:13:23 by teatime           #+#    #+#             */
-/*   Updated: 2025/02/21 20:18:57 by egache           ###   ########.fr       */
+/*   Updated: 2025/02/22 00:39:38 by teatime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	t_ps	*ps;
-	int		i;
+	t_ps *ps;
+	int i;
 
 	ps = ft_calloc(1, sizeof(t_ps));
 	if (!ps)
@@ -26,58 +26,57 @@ int	main(int argc, char **argv)
 		return (1);
 	parsing(argc, argv, ps);
 	// ------------- test pb ------------
-	ft_printf("\n\n");
-	pb(ps->stack);
-	ft_printf("pb\n");
-	i = 0;
-	while (i < ps->stack->len)
-	{
-		ft_printf("[%d],", ps->stack->a[i]);
-		i++;
-	}
-	ft_printf("\n");
-	i = 0;
-	while (i < ps->stack->len)
-	{
-		ft_printf("[%d],", ps->stack->b[i]);
-		i++;
-	}
-	ft_printf("\n\n");
-	pb(ps->stack);
-	ft_printf("pb\n");
-	i = 0;
-	while (i < ps->stack->len)
-	{
-		ft_printf("[%d],", ps->stack->a[i]);
-		i++;
-	}
-	ft_printf("\n");
-	i = 0;
-	while (i < ps->stack->len)
-	{
-		ft_printf("[%d],", ps->stack->b[i]);
-		i++;
-	}
-	ft_printf("\n\n");
-	pb(ps->stack);
-	pb(ps->stack);
-	ft_printf("pb\n");
-	i = 0;
-	while (i < ps->stack->len)
-	{
-		ft_printf("[%d],", ps->stack->a[i]);
-		i++;
-	}
-	ft_printf("\n");
-	i = 0;
-	while (i < ps->stack->len)
-	{
-		ft_printf("[%d],", ps->stack->b[i]);
-		i++;
-	}
-	ft_printf("\n\n");
+	// ft_printf("\n\n");
+	// pb(ps->stack);
+	// ft_printf("pb\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->a[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->b[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n\n");
+	// pb(ps->stack);
+	// ft_printf("pb\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->a[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->b[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n\n");
+	// pb(ps->stack);
+	// pb(ps->stack);
+	// ft_printf("pb\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->a[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
+	// i = 0;
+	// while (i < ps->stack->len)
+	// {
+	// 	ft_printf("[%d],", ps->stack->b[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n\n");
 	// ------------ test ra
-	//pb(ps->stack);
 	ra(ps->stack);
 	ft_printf("ra\n");
 	i = 0;
@@ -96,6 +95,56 @@ int	main(int argc, char **argv)
 	ft_printf("\n\n");
 	ra(ps->stack);
 	ft_printf("ra\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->a[i]);
+		i++;
+	}
+	ft_printf("\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->b[i]);
+		i++;
+	}
+	ft_printf("\n\n");
+	// ---------- rra test
+	pb(ps->stack);
+	pb(ps->stack);
+	ft_printf("pbx2\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->a[i]);
+		i++;
+	}
+	ft_printf("\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->b[i]);
+		i++;
+	}
+	ft_printf("\n\n");
+	rra(ps->stack);
+	ft_printf("rra\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->a[i]);
+		i++;
+	}
+	ft_printf("\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("[%d],", ps->stack->b[i]);
+		i++;
+	}
+	ft_printf("\n\n");
+	rrr(ps->stack);
+	ft_printf("rrr\n");
 	i = 0;
 	while (i < ps->stack->len)
 	{
@@ -231,7 +280,7 @@ int	main(int argc, char **argv)
 	free_exit(ps, "yessir\n", EXIT_SUCCESS);
 	return (0);
 }
-void	parsing(int argc, char **argv, t_ps *ps)
+void parsing(int argc, char **argv, t_ps *ps)
 {
 	if (argc < 2)
 		free_exit(ps, "Error\nWrong number of arguments", EXIT_FAILURE);
@@ -240,9 +289,9 @@ void	parsing(int argc, char **argv, t_ps *ps)
 	else
 		handle_multiple_argument(argc - 1, argv + 1, ps);
 }
-void	check_arguments(t_ps *ps, char **args)
+void check_arguments(t_ps *ps, char **args)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (i < ps->stack->len)
@@ -257,18 +306,18 @@ void	check_arguments(t_ps *ps, char **args)
 			free_exit(ps, "Error\nDuplicate number", EXIT_FAILURE);
 		i++;
 	}
-	return ;
+	return;
 }
-void	handle_multiple_argument(int len, char **args, t_ps *ps)
+void handle_multiple_argument(int len, char **args, t_ps *ps)
 {
 	ps->stack->len = len;
 	check_arguments(ps, args);
 	stack_initialisation(ps, args);
 }
 
-void	handle_single_argument(char *arg, t_ps *ps)
+void handle_single_argument(char *arg, t_ps *ps)
 {
-	t_stack	*stack;
+	t_stack *stack;
 
 	stack = ps->stack;
 	stack->len = 0;
@@ -281,11 +330,11 @@ void	handle_single_argument(char *arg, t_ps *ps)
 	stack_initialisation(ps, stack->args);
 }
 
-long	ft_atol_argument(char *str)
+long ft_atol_argument(char *str)
 {
-	int		i;
-	int		sign;
-	long	result;
+	int i;
+	int sign;
+	long result;
 
 	i = 0;
 	sign = 1;
