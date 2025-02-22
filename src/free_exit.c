@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   free_exit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 19:07:01 by egache            #+#    #+#             */
-/*   Updated: 2025/02/22 00:30:24 by teatime          ###   ########.fr       */
+/*   Updated: 2025/02/22 12:44:28 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void free_exit(t_ps *ps, char *str, int ret)
+void	free_exit(t_ps *ps, char *str, int ret)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (ps->stack->a && ps->stack)
@@ -43,23 +43,7 @@ void free_exit(t_ps *ps, char *str, int ret)
 		ft_putstr_fd(str, 2);
 	exit(ret);
 }
-
-// void	free_map(t_ps *ps)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	if (map && map->map)
-// 	{
-// 		while (i < map->height)
-// 			free(map->map[i++]);
-// 		free(map->map);
-// 	}
-// 	i = 0;
-// 	if (map && map->mapcopy)
-// 	{
-// 		while (i < map->height)
-// 			free(map->mapcopy[i++]);
-// 		free(map->mapcopy);
-// 	}
-// }
+void	free_stack(t_stack *stack)
+{
+	
+}

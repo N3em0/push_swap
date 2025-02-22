@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: teatime <teatime@student.42.fr>            +#+  +:+       +#+         #
+#    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 15:58:15 by egache            #+#    #+#              #
-#    Updated: 2025/02/22 00:30:51 by teatime          ###   ########.fr        #
+#    Updated: 2025/02/22 12:43:02 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,12 +28,12 @@ SRC_DIR	:=	src
 SRC		:=					\
 push_swap.c					\
 parsing.c					\
-check_argument.c			\
+check_arguments.c			\
 stack_initialisation.c		\
-free_exit.c					\
 operations_swap_push.c		\
 operations_rotate.c			\
 operations_reverse.c		\
+free_exit.c					\
 todump.c					\
 
 SRC		:=	$(SRC:%=$(SRC_DIR)/%)
