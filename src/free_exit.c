@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 19:07:01 by egache            #+#    #+#             */
-/*   Updated: 2025/02/22 12:44:28 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/04 17:56:00 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	free_exit(t_ps *ps, char *str, int ret)
 		ft_putstr_fd(str, 2);
 	exit(ret);
 }
-void	free_stack(t_stack *stack)
-{
-	
-}
+// void	free_stack(t_stack *stack)
+// {
+
+// }

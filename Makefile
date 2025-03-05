@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 15:58:15 by egache            #+#    #+#              #
-#    Updated: 2025/02/22 12:43:02 by egache           ###   ########.fr        #
+#    Updated: 2025/03/05 17:57:43 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ stack_initialisation.c		\
 operations_swap_push.c		\
 operations_rotate.c			\
 operations_reverse.c		\
+sorting.c					\
 free_exit.c					\
 todump.c					\
 
@@ -52,22 +53,22 @@ LIBNAME	:=	$(addprefix -l,$(LIBS))
 
 DIR_DUP	=	mkdir -p $(@D)
 
+MAKEFLAGS	+=	--no-print-directory
+
 RM	:=	rm -f
 RMF	:=	rm -rf
 
 all	:	$(NAME)
 
 $(NAME)	:	$(OBJ) $(LIBS_TARGET)
-			$(CC) $(LIBDIR) $(OBJ) $(LIBNAME)
-			#$(info CREATED $(NAME))
+			$(CC) $(LIBDIR) $(OBJ) $(LIBNAME) -o $(NAME)
 
 $(LIBS_TARGET)	:
 			@$(MAKE) -C $(@D)
 
 $(BUILD_DIR)/%.o:	$(SRC_DIR)/%.c
 			$(DIR_DUP)
-			$(CC) $(CFLAGS) $(info INCLUDE paths: $(INCLUDE)) $(INCLUDE) -c -o $@ $<
-			$(info CREATED $@)
+			$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
 
 -include $(DEP)
 
@@ -83,7 +84,6 @@ fclean:	clean
 			$(MAKE) fclean -C get_next_line
 			$(MAKE) fclean -C libft
 			$(MAKE) fclean -C ft_printf
-			#$(info CLEANED $(NAME))
 
 re:
 			$(MAKE) fclean
@@ -91,4 +91,4 @@ re:
 
 .PHONY:	all clean fclean re
 
-.SILENT:
+#.SILENT:

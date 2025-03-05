@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 17:59:37 by teatime           #+#    #+#              #
-#    Updated: 2025/02/19 16:45:28 by egache           ###   ########.fr        #
+#    Updated: 2025/03/04 14:08:26 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,12 +84,10 @@ all             :	$(NAME)
 
 $(NAME)			:	$(OBJ)
 			$(AR) $(NAME) $(OBJ)
-			$(info CREATED $(NAME))
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 			$(DIR_DUP)
 			$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
-			$(info CREATED $@)
 
 -include $(DEP)
 

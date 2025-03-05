@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:16:31 by egache            #+#    #+#             */
-/*   Updated: 2025/02/22 12:43:14 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/05 19:00:01 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,17 @@ int	duplicate_argument(int len, char **args, int pos)
 int	invalid_argument(char *arg)
 {
 	int	i;
-	int	minusc;
+	int	signc;
 	int	nbc;
 
 	i = 0;
-	minusc = 0;
+	signc = 0;
 	nbc = 0;
 	while (arg[i] != '\0' && arg[i])
 	{
-		if (arg[i] == '-' && ft_isdigit(arg[i + 1]) == 1 && minusc++ == 0)
+		if (arg[i] == '-' && ft_isdigit(arg[i + 1]) == 1 && signc++ == 0)
+			i++;
+		else if (arg[i] == '+' && ft_isdigit(arg[i + 1]) == 1 && signc++ == 0)
 			i++;
 		else if (ft_isdigit(arg[i]) == 1 && nbc < 1)
 		{
@@ -69,10 +71,10 @@ int	overflow_argument(char *arg)
 {
 	long	nb;
 
-	if (ft_strlen(arg) > 10)
+	if (ft_strlen(arg) > 11)
 		return (1);
 	nb = ft_atol_argument(arg);
-	if (nb > INT_MAX || nb <= INT_MIN)
+	if (nb > INT_MAX || nb < INT_MIN)
 		return (1);
 	else
 		return (0);

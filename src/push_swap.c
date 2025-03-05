@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:13:23 by teatime           #+#    #+#             */
-/*   Updated: 2025/02/22 12:43:31 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/05 19:24:48 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 int	main(int argc, char **argv)
 {
 	t_ps	*ps;
+	int i;
 
+	i = 0;
 	ps = ft_calloc(1, sizeof(t_ps));
 	if (!ps)
 		return (1);
@@ -24,6 +26,23 @@ int	main(int argc, char **argv)
 	if (!ps->stack)
 		return (1);
 	parsing(argc, argv, ps);
+	radix_sorting(ps->stack);
+	ft_printf("\n");
+	ft_printf("stacka sorted\n");
+	while (i < ps->stack->len)
+	{
+		ft_printf("{%d},", ps->stack->a[i]);
+		i++;
+	}
+	ft_printf("\n");
+	ft_printf("stackb sorted\n");
+	i = 0;
+	while (i < ps->stack->len)
+	{
+		ft_printf("/%d/,", ps->stack->b[i]);
+		i++;
+	}
+	ft_printf("\n");
 	free_exit(ps, "yessir\n", EXIT_SUCCESS);
 	return (0);
 }
@@ -48,9 +67,10 @@ long	ft_atol_argument(char *str)
 	result = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sign = -1;
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')

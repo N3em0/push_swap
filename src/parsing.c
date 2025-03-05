@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:37:03 by teatime           #+#    #+#             */
-/*   Updated: 2025/02/22 12:42:51 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/04 17:28:22 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ void	handle_multiple_argument(int len, char **args, t_ps *ps)
 	stack_initialisation(ps, args);
 }
 
+
 void	handle_single_argument(char *arg, t_ps *ps)
+
 {
 	t_stack	*stack;
 

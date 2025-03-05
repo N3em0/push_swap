@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_initialisation.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:08:41 by egache            #+#    #+#             */
-/*   Updated: 2025/02/22 00:20:52 by teatime          ###   ########.fr       */
+/*   Updated: 2025/03/05 19:14:06 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int stack_fill(t_stack *stack, int len, char **tab)
 	{
 		stack->saved[i] = (int)ft_atol_argument(tab[i]);
 		stack->presort[i] = stack->saved[i];
-		stack->b[i] = 0;
+		stack->b[i] = -1;
 		ft_printf("[%d],", stack->saved[i]);
 		i++;
 	}
@@ -68,7 +68,7 @@ int stack_indexing(t_stack *stack)
 		while (j < stack->len)
 		{
 			if (stack->saved[i] == stack->presort[j])
-				stack->a[i] = j + 1;
+				stack->a[i] = j;
 			j++;
 		}
 		i++;
@@ -90,6 +90,8 @@ int stack_indexing(t_stack *stack)
 		ft_printf("/%d/,", stack->b[i]);
 		i++;
 	}
+	ft_printf("\n");
+	ft_printf("max : %d", ft_strlen(ft_itoa(stack->presort[stack->len - 1])));
 	ft_printf("\n");
 	return (0);
 }

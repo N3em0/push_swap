@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations_reverse.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 00:21:18 by teatime           #+#    #+#             */
-/*   Updated: 2025/02/22 00:39:30 by teatime          ###   ########.fr       */
+/*   Updated: 2025/03/05 18:02:37 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void rra(t_stack *stack)
     swap = 0;
     while (i > 0)
     {
-        if (stack->a[i] != 0 && swap == 0)
+        if (stack->a[i] != -1 && swap == 0)
             swap = stack->a[i];
-        if (stack->a[i] != 0)
+        if (stack->a[i] != -1)
             stack->a[i] = stack->a[i - 1];
         i--;
     }
@@ -39,9 +39,9 @@ void rrb(t_stack *stack)
     swap = 0;
     while (i > 0)
     {
-        if (stack->b[i] != 0 && swap == 0)
+        if (stack->b[i] != -1 && swap == 0)
             swap = stack->b[i];
-        if (stack->b[i] != 0)
+        if (stack->b[i] != -1)
             stack->b[i] = stack->b[i - 1];
         i--;
     }
