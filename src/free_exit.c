@@ -6,39 +6,37 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 19:07:01 by egache            #+#    #+#             */
-/*   Updated: 2025/03/04 17:56:00 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/06 18:22:52 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_exit(t_ps *ps, char *str, int ret)
+void	free_exit(t_stack *stack, char *str, int ret)
 {
 	int	i;
 
 	i = 0;
-	if (ps->stack->a && ps->stack)
-		free(ps->stack->a);
-	if (ps->stack->b && ps->stack)
-		free(ps->stack->b);
-	if (ps->stack->presort && ps->stack)
-		free(ps->stack->presort);
-	if (ps->stack->saved && ps->stack)
-		free(ps->stack->saved);
-	if (ps->stack->args)
+	if (stack->a && stack)
+		free(stack->a);
+	if (stack->b && stack)
+		free(stack->b);
+	if (stack->presort && stack)
+		free(stack->presort);
+	if (stack->saved && stack)
+		free(stack->saved);
+	if (stack->args)
 	{
-		while (i < ps->stack->len)
+		while (i < stack->len)
 		{
-			if (ps->stack->args[i] != NULL)
-				free(ps->stack->args[i]);
+			if (stack->args[i] != NULL)
+				free(stack->args[i]);
 			i++;
 		}
-		free(ps->stack->args);
+		free(stack->args);
 	}
-	if (ps->stack)
-		free(ps->stack);
-	if (ps)
-		free(ps);
+	if (stack)
+		free(stack);
 	if (str != NULL)
 		ft_putstr_fd(str, 2);
 	exit(ret);

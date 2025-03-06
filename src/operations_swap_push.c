@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 15:45:55 by egache            #+#    #+#             */
-/*   Updated: 2025/03/05 18:02:03 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/06 19:32:53 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@ void	sa(t_stack *stack)
 {
 	int	swap;
 
-	if (stack->a[0] != -1 && stack->a[1] != -1)
+	if (stack->b && stack->a && stack)
 	{
 		swap = stack->a[0];
 		stack->a[0] = stack->a[1];
 		stack->a[1] = swap;
+		write(1, "sa\n", 3);
 	}
 	return ;
 }
@@ -28,26 +29,38 @@ void	sb(t_stack *stack)
 {
 	int	swap;
 
-	if (stack->b[0] != -1 && stack->b[1] != -1)
+	if (stack->b && stack->a && stack)
 	{
 		swap = stack->b[0];
 		stack->b[0] = stack->b[1];
 		stack->b[1] = swap;
+		write(1, "sb\n", 3);
 	}
 	return ;
 }
 
 void	ss(t_stack *stack)
 {
-	sa(stack);
-	sb(stack);
+	int	swap;
+
+	if (stack->b && stack->a && stack)
+	{
+		swap = stack->a[0];
+		stack->a[0] = stack->a[1];
+		stack->a[1] = swap;
+		swap = stack->b[0];
+		stack->b[0] = stack->b[1];
+		stack->b[1] = swap;
+		write(1, "ss\n", 3);
+	}
+	return ;
 }
 
 void	pa(t_stack *stack)
 {
 	int	i;
 
-	if (stack->b[0] != -1)
+	if (stack->b && stack->a && stack)
 	{
 		i = stack->len - 1;
 		while (i > 0)
@@ -63,13 +76,15 @@ void	pa(t_stack *stack)
 			i++;
 		}
 		stack->b[stack->len - 1] = -1;
+		write(1, "pa\n", 3);
 	}
+	return ;
 }
 void	pb(t_stack *stack)
 {
 	int	i;
 
-	if (stack->a[0] != -1)
+	if (stack->b && stack->a && stack)
 	{
 		i = stack->len - 1;
 		while (i > 0)
@@ -85,5 +100,7 @@ void	pb(t_stack *stack)
 			i++;
 		}
 		stack->a[stack->len - 1] = -1;
+		write(1, "pb\n", 3);
 	}
+	return ;
 }

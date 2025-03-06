@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:13:23 by teatime           #+#    #+#             */
-/*   Updated: 2025/03/05 19:24:48 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/06 18:34:42 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,45 +15,26 @@
 
 int	main(int argc, char **argv)
 {
-	t_ps	*ps;
-	int i;
+	t_stack	*stack;
+	int		i;
 
 	i = 0;
-	ps = ft_calloc(1, sizeof(t_ps));
-	if (!ps)
-		return (1);
-	ps->stack = ft_calloc(1, sizeof(t_stack));
-	if (!ps->stack)
-		return (1);
-	parsing(argc, argv, ps);
-	radix_sorting(ps->stack);
-	ft_printf("\n");
-	ft_printf("stacka sorted\n");
-	while (i < ps->stack->len)
-	{
-		ft_printf("{%d},", ps->stack->a[i]);
-		i++;
-	}
-	ft_printf("\n");
-	ft_printf("stackb sorted\n");
-	i = 0;
-	while (i < ps->stack->len)
-	{
-		ft_printf("/%d/,", ps->stack->b[i]);
-		i++;
-	}
-	ft_printf("\n");
-	free_exit(ps, "yessir\n", EXIT_SUCCESS);
+	stack = ft_calloc(1, sizeof(t_stack));
+	if (!stack)
+		free_exit(stack, "Error\n", EXIT_FAILURE);
+	parsing(argc, argv, stack);
+	radix_sorting(stack);
+	free_exit(stack, NULL, EXIT_SUCCESS);
 	return (0);
 }
-void	parsing(int argc, char **argv, t_ps *ps)
+void	parsing(int argc, char **argv, t_stack *stack)
 {
 	if (argc < 2)
-		free_exit(ps, "Error\nWrong number of arguments", EXIT_FAILURE);
+		free_exit(stack, NULL, EXIT_FAILURE);
 	else if (argc == 2)
-		handle_single_argument(argv[1], ps);
+		handle_single_argument(argv[1], stack);
 	else
-		handle_multiple_argument(argc - 1, argv + 1, ps);
+		handle_multiple_argument(argc - 1, argv + 1, stack);
 }
 
 long	ft_atol_argument(char *str)

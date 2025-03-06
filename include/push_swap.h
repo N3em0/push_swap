@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:04:28 by teatime           #+#    #+#             */
-/*   Updated: 2025/03/05 19:17:52 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/06 18:26:14 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,25 +30,20 @@ typedef struct s_stack
 	int		*saved;
 }			t_stack;
 
-typedef struct s_ps
-{
-	t_stack	*stack;
-}			t_ps;
-
 int			main(int argc, char **argv);
 
-void		parsing(int argc, char **argv, t_ps *ps);
-void		handle_single_argument(char *arg, t_ps *ps);
-void		handle_multiple_argument(int len, char **args, t_ps *ps);
+void		parsing(int argc, char **argv, t_stack *stack);
+void		handle_single_argument(char *arg, t_stack *stack);
+void		handle_multiple_argument(int len, char **args, t_stack *stack);
 
-void		check_arguments(t_ps *ps, char **args);
+void		check_arguments(t_stack *stack, char **args);
 int			invalid_argument(char *arg);
 int			empty_argument(char *arg);
 int			overflow_argument(char *arg);
 int			duplicate_argument(int len, char **args, int pos);
 long		ft_atol_argument(char *str);
 
-void		stack_initialisation(t_ps *ps, char **args);
+void		stack_initialisation(t_stack *stack, char **args);
 int			stack_malloc(t_stack *stack, int len);
 int			stack_fill(t_stack *stack, int len, char **tab);
 int			stack_indexing(t_stack *stack);
@@ -68,7 +63,7 @@ void		rrr(t_stack *stack);
 
 void		radix_sorting(t_stack *stack);
 
-void		free_exit(t_ps *ps, char *str, int ret);
+void		free_exit(t_stack *stack, char *str, int ret);
 // void	struct_initialisation(t_ps *ps);
 
 // void		stack_initialisation(int argc, char **argv, t_ps *ps);

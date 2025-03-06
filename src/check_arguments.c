@@ -6,26 +6,21 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:16:31 by egache            #+#    #+#             */
-/*   Updated: 2025/03/05 19:00:01 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/06 18:40:08 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	duplicate_argument(int len, char **args, int pos)
+int	empty_argument(char *arg)
 {
 	int	i;
 
 	i = 0;
-	while (i < len)
-	{
-		if (ft_atol_argument(args[pos]) == ft_atol_argument(args[i])
-			&& pos != i)
-			return (1);
-		else
-			i++;
-	}
-	return (0);
+	if (arg[i] != '\0' && arg[i])
+		return (0);
+	else
+		return (1);
 }
 
 int	invalid_argument(char *arg)
@@ -57,22 +52,28 @@ int	invalid_argument(char *arg)
 	return (0);
 }
 
-int	empty_argument(char *arg)
+int	duplicate_argument(int len, char **args, int pos)
 {
 	int	i;
 
 	i = 0;
-	if (arg[i] != '\0' && arg[i])
-		return (0);
-	else
-		return (1);
+	while (i < len)
+	{
+		if (ft_atol_argument(args[pos]) == ft_atol_argument(args[i])
+			&& pos != i)
+			return (1);
+		else
+			i++;
+	}
+	return (0);
 }
+
 int	overflow_argument(char *arg)
 {
 	long	nb;
 
-	if (ft_strlen(arg) > 11)
-		return (1);
+	// if (ft_strlen(arg) > 11)
+	// 	return (1);
 	nb = ft_atol_argument(arg);
 	if (nb > INT_MAX || nb < INT_MIN)
 		return (1);

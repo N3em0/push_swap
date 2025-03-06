@@ -40,3 +40,94 @@
 // 	}
 //     return (0);
 // }
+
+//--------------------test sur sorting pour afficher valeurs
+// ft_printf("\n");
+// ft_printf("shift value : %d", shift);
+// ft_printf("\n");
+// ft_printf("\n\n--\nbitwise value : %d\n", ((stack->a[0] >> shift)
+// 		&& 1));
+// ft_printf("stack->a[0] value :%d\n", stack->a[0]);
+// ft_printf("i value : %d\n--\n\n", i);
+
+// j = 0;
+// ft_printf("\n");
+// ft_printf("----------------PB-------------\n");
+// ft_printf("stack A\n");
+// while (j < stack->len)
+// {
+// 	ft_printf("[%d] ", stack->a[j]);
+// 	j++;
+// }
+// ft_printf("\n");
+// ft_printf("stack B\n");
+// j = 0;
+// while (j < stack->len)
+// {
+// 	ft_printf("[%d] ", stack->b[j]);
+// 	j++;
+// }
+// ft_printf("\n");
+// ft_printf("----------------PB-------------\n");
+
+// j = 0;
+// ft_printf("\n");
+// ft_printf("----------------RA-------------\n");
+// ft_printf("stack A\n");
+// while (j < stack->len)
+// {
+// 	ft_printf("[%d] ", stack->a[j]);
+// 	j++;
+// }
+// ft_printf("\n");
+// ft_printf("stack B\n");
+// j = 0;
+// while (j < stack->len)
+// {
+// 	ft_printf("[%d] ", stack->b[j]);
+// 	j++;
+// }
+// ft_printf("\n");
+// ft_printf("----------------RA-------------\n");
+
+// j = 0;
+// ft_printf("\n");
+// ft_printf("----------------PA-------------\n");
+// ft_printf("stack A\n");
+// while (j < stack->len)
+// {
+// 	ft_printf("[%d] ", stack->a[j]);
+// 	j++;
+// }
+// ft_printf("\n");
+// ft_printf("stack B\n");
+// j = 0;
+// while (j < stack->len)
+// {
+// 	ft_printf("[%d] ", stack->b[j]);
+// 	j++;
+// }
+// ft_printf("\n");
+// ft_printf("----------------PA-------------\n");
+
+// ft_printf("\n");
+// ft_printf("shift value : %d", shift);
+// ft_printf("\n");
+
+//---------------------------------sorted display
+// ft_printf("\n");
+// ft_printf("stacka sorted\n");
+// while (i < ps->stack->len)
+// {
+// 	ft_printf("{%d},", ps->stack->a[i]);
+// 	i++;
+// }
+// ft_printf("\n");
+// ft_printf("stackb sorted\n");
+// i = 0;
+// while (i < ps->stack->len)
+// {
+// 	ft_printf("/%d/,", ps->stack->b[i]);
+// 	i++;
+// }
+// ft_printf("\n");
