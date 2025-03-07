@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:04:28 by teatime           #+#    #+#             */
-/*   Updated: 2025/03/06 18:26:14 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/07 17:57:26 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ void		rra(t_stack *stack);
 void		rrb(t_stack *stack);
 void		rrr(t_stack *stack);
 
+void		sorting(t_stack *stack);
+int			stack_sorted(t_stack *stack);
 void		radix_sorting(t_stack *stack);
+void		three_sorting(t_stack *stack, int min, int max);
+void		four_sorting(t_stack *stack);
+void		five_sorting(t_stack *stack);
 
 void		free_exit(t_stack *stack, char *str, int ret);
-// void	struct_initialisation(t_ps *ps);
-
-// void		stack_initialisation(int argc, char **argv, t_ps *ps);
-// int			stack_malloc(int argc, char **argv, t_ps *ps);
-// int			stack_copy(t_ps *ps);
 #endif
