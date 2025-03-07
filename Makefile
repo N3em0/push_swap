@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 15:58:15 by egache            #+#    #+#              #
-#    Updated: 2025/03/07 18:15:51 by egache           ###   ########.fr        #
+#    Updated: 2025/03/07 21:14:02 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,12 @@ todump.c					\
 
 SRC		:=	$(SRC:%=$(SRC_DIR)/%)
 
+BOLDGREEN	:= \e[1;32m
+BOLDBLUE 	:= \033[1;34m
+YELLOW		:= \033[1;93m
+WHITE 		:= \033[0m
+BLUE		:= \033[0;34m
+
 BUILD_DIR:=	.build
 OBJ		:=	$(SRC:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 DEP		:=	$(OBJ:%.o=.d)
@@ -58,18 +64,24 @@ MAKEFLAGS	+= --no-print-directory
 RM	:=	rm -f
 RMF	:=	rm -rf
 
-all	:	$(NAME)
+all	:	.printsep $(NAME)
+		echo "$(BOLDBLUE)$(NAME)$(WHITE) compilation $(BOLDGREEN)done$(WHITE)"
+		$(call SEPARATOR)
 
 $(NAME)	:	$(OBJ) $(LIBS_TARGET)
 			$(CC) $(LIBDIR) $(OBJ) $(LIBNAME) -o $(NAME)
-			$(info $(NAME) DONE)
+			$(call SEPARATOR)
+			echo "$(BOLDBLUE)$(NAME) $(WHITE)compilation $(YELLOW) ...$(WHITE)"
+			$(call SEPARATOR)
 
 $(LIBS_TARGET)	:
 			$(MAKE) -C $(@D)
+			echo "$(BOLDBLUE)$(@D)$(WHITE) library $(BOLDGREEN)done"
 
 $(BUILD_DIR)/%.o:	$(SRC_DIR)/%.c
 			$(DIR_DUP)
 			$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
+
 
 -include $(DEP)
 
@@ -90,6 +102,13 @@ re:
 			$(MAKE) fclean
 			$(MAKE) all
 
+.printsep:
+			$(call SEPARATOR)
+
 .PHONY:	all clean fclean re
 
 .SILENT:
+
+define	SEPARATOR
+						@echo "\n$(BLUE)--------------------------$(WHITE)\n";
+endef
