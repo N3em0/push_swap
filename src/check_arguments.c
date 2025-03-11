@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:16:31 by egache            #+#    #+#             */
-/*   Updated: 2025/03/11 13:17:32 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/11 20:37:49 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,19 @@ int	invalid_argument(char *arg)
 	return (0);
 }
 
+int	overflow_argument(char *arg)
+{
+	long	nb;
+
+	nb = ft_atol_argument(arg);
+	if (ft_strlen(arg) > 11)
+		return (1);
+	if (nb > INT_MAX || nb < INT_MIN)
+		return (1);
+	else
+		return (0);
+}
+
 int	duplicate_argument(int len, char **args, int pos)
 {
 	int	i;
@@ -68,15 +81,27 @@ int	duplicate_argument(int len, char **args, int pos)
 	return (0);
 }
 
-int	overflow_argument(char *arg)
+long	ft_atol_argument(char *str)
 {
-	long	nb;
+	int		i;
+	int		sign;
+	long	result;
 
-	nb = ft_atol_argument(arg);
-	if (ft_strlen(arg) > 11)
-		return (1);
-	if (nb > INT_MAX || nb < INT_MIN)
-		return (1);
-	else
-		return (0);
+	i = 0;
+	sign = 1;
+	result = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }

@@ -6,45 +6,31 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:57:46 by egache            #+#    #+#             */
-/*   Updated: 2025/03/07 17:49:59 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/11 20:43:23 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	radix_sorting(t_stack *stack)
+int	stack_sorted(t_stack *stack)
 {
 	int	i;
-	int	shift;
-	int	bits;
 
-	shift = 0;
-	bits = 0;
-	while ((stack->len - 1) >> bits != 0)
-		bits++;
-	while (shift < bits)
+	i = 0;
+	while (i < stack->len - 1)
 	{
-		i = 0;
-		while (i < stack->len)
-		{
-			if (((stack->a[0] >> shift) & 1) == 0)
-				pb(stack);
-			else
-				ra(stack);
-			i++;
-		}
-		while (stack->b[0] != -1)
-			pa(stack);
-		shift++;
+		if (stack->a[i] > stack->a[i + 1])
+			return (1);
+		i++;
 	}
-	return ;
+	return (0);
 }
 
 void	three_sorting(t_stack *stack, int min, int max)
 {
 	if ((stack->a[0] == max && stack->a[2] == min) ||
 		(stack->a[0] == min && stack->a[1] == max) ||
-		(stack->a[1] == min	&& stack->a[2] == max))
+		(stack->a[1] == min && stack->a[2] == max))
 	{
 		sa(stack);
 	}
@@ -83,16 +69,30 @@ void	five_sorting(t_stack *stack)
 	return ;
 }
 
-int	stack_sorted(t_stack *stack)
+void	radix_sorting(t_stack *stack)
 {
 	int	i;
+	int	shift;
+	int	bits;
 
-	i = 0;
-	while (i < stack->len - 1)
+	shift = 0;
+	bits = 0;
+	while ((stack->len - 1) >> bits != 0)
+		bits++;
+	while (shift < bits)
 	{
-		if (stack->a[i] > stack->a[i + 1])
-			return (1);
-		i++;
+		i = 0;
+		while (i < stack->len)
+		{
+			if (((stack->a[0] >> shift) & 1) == 0)
+				pb(stack);
+			else
+				ra(stack);
+			i++;
+		}
+		while (stack->b[0] != -1)
+			pa(stack);
+		shift++;
 	}
-	return (0);
+	return ;
 }

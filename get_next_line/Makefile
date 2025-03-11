@@ -6,11 +6,11 @@
 #    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 14:29:30 by egache            #+#    #+#              #
-#    Updated: 2025/03/04 14:08:22 by egache           ###   ########.fr        #
+#    Updated: 2025/03/11 21:39:44 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-HEAD			:=	get_next_line.h
+HEAD			:=	include/get_next_line.h
 
 NAME			:=	libgnl.a
 
@@ -40,7 +40,7 @@ RMF				:=	rm -rf
 
 all				:	$(NAME)
 
-$(NAME)			:	$(OBJ)
+$(NAME)			:	$(OBJ) $(HEAD)
 			$(AR) $(NAME) $(OBJ)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c

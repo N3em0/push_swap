@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:13:23 by teatime           #+#    #+#             */
-/*   Updated: 2025/03/07 17:52:06 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/11 20:54:44 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	parsing(int argc, char **argv, t_stack *stack)
 }
 void	sorting(t_stack *stack)
 {
-	if (stack_sorted(stack) == 0)
+	if (stack_sorted(stack) == 0 || stack->len == 1)
 		free_exit(stack, NULL, EXIT_SUCCESS);
 	else if (stack->len == 2)
 		sa(stack);
@@ -50,28 +50,4 @@ void	sorting(t_stack *stack)
 		five_sorting(stack);
 	else
 		radix_sorting(stack);
-}
-long	ft_atol_argument(char *str)
-{
-	int		i;
-	int		sign;
-	long	result;
-
-	i = 0;
-	sign = 1;
-	result = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
 }

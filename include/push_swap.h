@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:04:28 by teatime           #+#    #+#             */
-/*   Updated: 2025/03/11 13:51:42 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/11 20:33:03 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ int			duplicate_argument(int len, char **args, int pos);
 long		ft_atol_argument(char *str);
 
 void		stack_initialisation(t_stack *stack, char **args);
-int			stack_malloc(t_stack *stack, int len);
-int			stack_fill(t_stack *stack, int len, char **tab);
+int			stack_malloc(t_stack *stack);
+int			stack_fill(t_stack *stack, char **tab);
 int			stack_indexing(t_stack *stack);
-void		ft_sort_int_tab(t_stack *stack, int len);
+void		ft_sort_int_tab(t_stack *stack);
 
 void		sa(t_stack *stack);
 void		sb(t_stack *stack);

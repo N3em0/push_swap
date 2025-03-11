@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 19:07:01 by egache            #+#    #+#             */
-/*   Updated: 2025/03/11 13:51:18 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/11 20:28:01 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ void	free_stack(t_stack *stack)
 		free(stack->a);
 	if (stack->b && stack)
 		free(stack->b);
-	if (stack->presort && stack)
-		free(stack->presort);
 	if (stack->saved && stack)
 		free(stack->saved);
+	if (stack->presort && stack)
+		free(stack->presort);
 	if (stack->args)
 	{
 		while (i < stack->len)
