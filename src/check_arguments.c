@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:16:31 by egache            #+#    #+#             */
-/*   Updated: 2025/03/06 18:40:08 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/11 13:17:32 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ int	overflow_argument(char *arg)
 {
 	long	nb;
 
-	// if (ft_strlen(arg) > 11)
-	// 	return (1);
 	nb = ft_atol_argument(arg);
+	if (ft_strlen(arg) > 11)
+		return (1);
 	if (nb > INT_MAX || nb < INT_MIN)
 		return (1);
 	else

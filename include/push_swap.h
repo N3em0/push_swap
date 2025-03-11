@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:04:28 by teatime           #+#    #+#             */
-/*   Updated: 2025/03/07 17:57:26 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/11 13:51:42 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,5 @@ void		four_sorting(t_stack *stack);
 void		five_sorting(t_stack *stack);
 
 void		free_exit(t_stack *stack, char *str, int ret);
+void		free_stack(t_stack *stack);
 #endif
