@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:16:31 by egache            #+#    #+#             */
-/*   Updated: 2025/03/11 20:37:49 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/13 20:46:06 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,25 @@ int	overflow_argument(char *arg)
 	long	nb;
 
 	nb = ft_atol_argument(arg);
-	if (ft_strlen(arg) > 11)
+	if (ft_strlen_digit(arg) > 11)
 		return (1);
 	if (nb > INT_MAX || nb < INT_MIN)
 		return (1);
 	else
 		return (0);
+}
+size_t ft_strlen_digit(const char *str)
+{
+		size_t	i;
+		size_t j;
+
+	i = 0;
+	j = 0;
+	while (str[i] && (ft_isdigit(str[i]) == 0 || str[i] != '-'))
+		i++;
+	while (str[i + j] && (ft_isdigit(str[i]) == 1 || str[i] == '-'))
+		j++;
+	return (j);
 }
 
 int	duplicate_argument(int len, char **args, int pos)
