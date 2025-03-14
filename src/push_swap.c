@@ -6,12 +6,11 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:13:23 by teatime           #+#    #+#             */
-/*   Updated: 2025/03/11 20:54:44 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/14 11:43:46 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
@@ -36,6 +35,7 @@ void	parsing(int argc, char **argv, t_stack *stack)
 	else
 		handle_multiple_argument(argc - 1, argv + 1, stack);
 }
+
 void	sorting(t_stack *stack)
 {
 	if (stack_sorted(stack) == 0 || stack->len == 1)

@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:37:03 by teatime           #+#    #+#             */
-/*   Updated: 2025/03/13 20:31:37 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/14 11:41:11 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	check_arguments(t_stack *stack, char **args)
 	while (i < stack->len)
 	{
 		if (empty_argument(args[i]) == 1)
-			free_exit(stack, "Error allo\n", EXIT_FAILURE);
+			free_exit(stack, "Error\n", EXIT_FAILURE);
 		if (invalid_argument(args[i]) == 1)
-			free_exit(stack, "Error ici\n", EXIT_FAILURE);
+			free_exit(stack, "Error\n", EXIT_FAILURE);
 		if (overflow_argument(args[i]) == 1)
-			free_exit(stack, "Error la \n", EXIT_FAILURE);
+			free_exit(stack, "Error\n", EXIT_FAILURE);
 		if (duplicate_argument(stack->len - 1, args, i) == 1)
-			free_exit(stack, "Error bas\n", EXIT_FAILURE);
+			free_exit(stack, "Error\n", EXIT_FAILURE);
 		i++;
 	}
 	return ;

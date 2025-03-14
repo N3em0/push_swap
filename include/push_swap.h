@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:04:28 by teatime           #+#    #+#             */
-/*   Updated: 2025/03/13 20:43:57 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/14 11:48:16 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int			invalid_argument(char *arg);
 int			empty_argument(char *arg);
 int			overflow_argument(char *arg);
 int			duplicate_argument(int len, char **args, int pos);
+
 long		ft_atol_argument(char *str);
 size_t		ft_strlen_digit(const char *str);
 

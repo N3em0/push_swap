@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:08:41 by egache            #+#    #+#             */
-/*   Updated: 2025/03/11 20:33:35 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/14 11:43:58 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	stack_initialisation(t_stack *stack, char **args)
 		free_exit(stack, "Error\n", EXIT_FAILURE);
 	stack_indexing(stack);
 }
+
 int	stack_malloc(t_stack *stack)
 {
 	stack->a = malloc((stack->len) * sizeof(int));
@@ -30,6 +31,7 @@ int	stack_malloc(t_stack *stack)
 		return (1);
 	return (0);
 }
+
 int	stack_fill(t_stack *stack, char **tab)
 {
 	int	i;

@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 15:58:15 by egache            #+#    #+#              #
-#    Updated: 2025/03/11 21:42:59 by egache           ###   ########.fr        #
+#    Updated: 2025/03/14 11:44:45 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ operations_rotate.c				\
 operations_reverse.c			\
 sorting.c						\
 free_exit.c						\
+push_swap_utils.c				\
 
 SRC		:=	$(SRC:%=$(SRC_DIR)/%)
 
