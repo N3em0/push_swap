@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:16:31 by egache            #+#    #+#             */
-/*   Updated: 2025/03/14 11:43:04 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/14 12:16:38 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	invalid_argument(char *arg)
 				i++;
 			nbc++;
 		}
-		else if (arg[i] == ' ')
+		else if (arg[i] == ' ' || (arg[i] >= 9 && arg[i] <= 13))
 			i++;
 		else
 			return (1);
