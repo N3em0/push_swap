@@ -6,16 +6,16 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 11:41:33 by egache            #+#    #+#             */
-/*   Updated: 2025/03/14 11:43:09 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/25 15:21:14 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t ft_strlen_digit(const char *str)
+size_t	ft_strlen_digit(const char *str)
 {
-		size_t	i;
-		size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
@@ -50,5 +50,3 @@ long	ft_atol_argument(char *str)
 	}
 	return (result * sign);
 }
-
-

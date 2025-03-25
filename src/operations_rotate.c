@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:50:49 by egache            #+#    #+#             */
-/*   Updated: 2025/03/06 19:45:09 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/25 15:19:09 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	ra(t_stack *stack)
 		write(1, "ra\n", 3);
 	}
 }
+
 void	rb(t_stack *stack)
 {
 	int	swap;
@@ -55,6 +56,7 @@ void	rb(t_stack *stack)
 	}
 	return ;
 }
+
 void	rr(t_stack *stack)
 {
 	int	swap;

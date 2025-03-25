@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:16:31 by egache            #+#    #+#             */
-/*   Updated: 2025/03/14 12:16:38 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/25 15:20:38 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,3 @@ int	duplicate_argument(int len, char **args, int pos)
 	}
 	return (0);
 }
-

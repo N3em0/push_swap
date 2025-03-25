@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:13:23 by teatime           #+#    #+#             */
-/*   Updated: 2025/03/14 11:43:46 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/25 15:19:34 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main(int argc, char **argv)
 	free_exit(stack, NULL, EXIT_SUCCESS);
 	return (0);
 }
+
 void	parsing(int argc, char **argv, t_stack *stack)
 {
 	if (argc < 2)

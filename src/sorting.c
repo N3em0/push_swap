@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:57:46 by egache            #+#    #+#             */
-/*   Updated: 2025/03/13 16:41:33 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/25 15:21:46 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	stack_sorted(t_stack *stack)
 
 void	three_sorting(t_stack *stack, int min, int max)
 {
-	if ((stack->a[0] == max && stack->a[2] == min) ||
-		(stack->a[0] == min && stack->a[1] == max) ||
-		(stack->a[1] == min && stack->a[2] == max))
+	if ((stack->a[0] == max && stack->a[2] == min)
+		|| (stack->a[0] == min && stack->a[1] == max)
+		|| (stack->a[1] == min && stack->a[2] == max))
 	{
 		sa(stack);
 	}
