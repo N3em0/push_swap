@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 19:07:01 by egache            #+#    #+#             */
-/*   Updated: 2025/03/25 15:19:22 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/26 18:16:00 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	free_exit(t_stack *stack, char *str, int ret)
 {
-	free_stack(stack);
+	if (stack)
+		free_stack(stack);
 	if (str != NULL)
 		ft_putstr_fd(str, 2);
 	exit(ret);
@@ -33,7 +34,7 @@ void	free_stack(t_stack *stack)
 		free(stack->saved);
 	if (stack->presort && stack)
 		free(stack->presort);
-	if (stack->args)
+	if (stack->args && stack)
 	{
 		while (i < stack->len)
 		{
@@ -43,6 +44,5 @@ void	free_stack(t_stack *stack)
 		}
 		free(stack->args);
 	}
-	if (stack)
-		free(stack);
+	free(stack);
 }

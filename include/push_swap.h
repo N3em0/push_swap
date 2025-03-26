@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:04:28 by teatime           #+#    #+#             */
-/*   Updated: 2025/03/14 11:48:16 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/26 18:55:31 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "ft_printf.h"
-# include "get_next_line.h"
 # include "libft.h"
 # include <fcntl.h>
 # include <stdio.h>

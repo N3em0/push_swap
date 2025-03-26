@@ -6,13 +6,12 @@
 #    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 15:58:15 by egache            #+#    #+#              #
-#    Updated: 2025/03/14 11:44:45 by egache           ###   ########.fr        #
+#    Updated: 2025/03/26 18:55:54 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBS		:=	gnl ft printf
+LIBS		:=	ft printf
 LIBS_TARGET	:=					\
-	get_next_line/libgnl.a		\
 	libft/libft.a				\
 	ft_printf/libprintf.a		\
 
@@ -20,7 +19,6 @@ HEADER := include/push_swap.h	\
 
 HEAD		:=					\
 include							\
-get_next_line/include			\
 libft/include					\
 ft_printf/include				\
 
@@ -92,7 +90,6 @@ $(BUILD_DIR)/%.o:	$(SRC_DIR)/%.c
 clean:
 			$(RM) $(OBJ) $(DEP)
 			$(RMF) $(BUILD_DIR)
-			$(MAKE) clean -C get_next_line
 			$(MAKE) clean -C libft
 			$(MAKE) clean -C ft_printf
 
@@ -100,7 +97,6 @@ fclean:	clean
 			$(call SEPARATOR)
 			echo "$(BOLDBLUE)$(NAME) $(WHITE)fclean  $(YELLOW)..."
 			$(RM) $(NAME)
-			$(MAKE) fclean -C get_next_line
 			$(MAKE) fclean -C libft
 			$(MAKE) fclean -C ft_printf
 			$(call SEPARATOR)
