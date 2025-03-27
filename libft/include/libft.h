@@ -6,18 +6,18 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:57:08 by egache            #+#    #+#             */
-/*   Updated: 2025/02/19 16:45:55 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/27 11:01:58 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "limits.h"
-# include "stddef.h"
-# include "stdint.h"
-# include "stdlib.h"
-# include "unistd.h"
+# include <limits.h>
+# include <stddef.h>
+# include <stdint.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {

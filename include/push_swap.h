@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:04:28 by teatime           #+#    #+#             */
-/*   Updated: 2025/03/26 18:55:31 by egache           ###   ########.fr       */
+/*   Updated: 2025/03/27 11:00:57 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "ft_printf.h"
 # include "libft.h"
 # include <fcntl.h>
-# include <stdio.h>
 # include <stdlib.h>
 
 typedef struct s_stack
