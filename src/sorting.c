@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:57:46 by egache            #+#    #+#             */
-/*   Updated: 2025/03/27 18:44:35 by egache           ###   ########.fr       */
+/*   Updated: 2025/04/02 18:26:49 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,40 +43,29 @@ void	three_sorting(t_stack *stack, int min, int max)
 	}
 }
 
-// void	four_sorting(t_stack *stack)
-// {
-// 	while (stack->a[3] != -1)
-// 	{
-// 		if (stack->a[0] != 0)
-// 			ra(stack);
-// 		else if (stack->a[0] == 0)
-// 			pb(stack);
-// 	}
-// 	three_sorting(stack, 1, 3);
-// 	pa(stack);
-// }
+void	four_sorting(t_stack *stack)
+{
+	while (stack->a[3] != -1)
+	{
+		if (stack->a[0] != 0)
+			ra(stack);
+		else if (stack->a[0] == 0)
+			pb(stack);
+	}
+	three_sorting(stack, 1, 3);
+	pa(stack);
+}
 
 void	five_sorting(t_stack *stack)
 {
 	while (stack->a[3] != -1)
 	{
-		if (stack->len == 5)
-		{
-			if (stack->a[0] != 0 && stack->a[0] != 1)
-				ra(stack);
-			else
-				pb(stack);
-			three_sorting(stack, 2, 4);
-		}
-		else if (stack->len == 4)
-		{
-			if (stack->a[0] != 0)
-				ra(stack);
-			else
-				pb(stack);
-			three_sorting(stack, 1, 3);
-		}
+		if (stack->a[0] != 0 && stack->a[0] != 1)
+			ra(stack);
+		else
+			pb(stack);
 	}
+	three_sorting(stack, 2, 4);
 	if (stack->b[0] < stack->b[1])
 		sb(stack);
 	pa(stack);

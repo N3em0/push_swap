@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:13:23 by teatime           #+#    #+#             */
-/*   Updated: 2025/03/27 18:41:53 by egache           ###   ########.fr       */
+/*   Updated: 2025/04/02 18:44:22 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ void	sorting(t_stack *stack)
 		sa(stack);
 	else if (stack->len == 3)
 		three_sorting(stack, 0, 2);
-	// else if (stack->len == 4)
-	// 	four_sorting(stack);
-	else if (stack->len > 3 && stack->len <= 5)
+	else if (stack->len == 4)
+		four_sorting(stack);
+	else if (stack->len == 5)
 		five_sorting(stack);
 	else
 		radix_sorting(stack);
