@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 15:58:15 by egache            #+#    #+#              #
-#    Updated: 2025/04/02 18:44:34 by egache           ###   ########.fr        #
+#    Updated: 2025/04/11 14:35:13 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,8 +43,6 @@ SRC		:=	$(SRC:%=$(SRC_DIR)/%)
 BUILD_DIR:=	.build
 OBJ		:=	$(SRC:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 DEP		:=	$(OBJ:%.o=.d)
-
-#AR	:=	ar -rcs
 
 CC		:=	cc
 CFLAGS	:=	-Wall -Wextra -Werror

@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 17:59:37 by teatime           #+#    #+#              #
-#    Updated: 2025/03/11 21:39:56 by egache           ###   ########.fr        #
+#    Updated: 2025/04/11 14:46:25 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ ft_lstlast.c            \
 ft_lstmap.c             \
 ft_lstnew.c             \
 ft_lstsize.c            \
+
 
 SRC             := $(SRC:$(SRC_DIR)/%=$(SRC_DIR)/%)
 
