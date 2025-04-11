@@ -6,21 +6,19 @@
 #    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 15:58:15 by egache            #+#    #+#              #
-#    Updated: 2025/04/11 14:35:13 by egache           ###   ########.fr        #
+#    Updated: 2025/04/11 15:30:48 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBS		:=	ft printf
+LIBS		:=	ft
 LIBS_TARGET	:=					\
 	libft/libft.a				\
-	ft_printf/libprintf.a		\
 
 HEADER := include/push_swap.h	\
 
 HEAD		:=					\
 include							\
 libft/include					\
-ft_printf/include				\
 
 NAME	:=	push_swap
 
@@ -89,14 +87,12 @@ clean:
 			$(RM) $(OBJ) $(DEP)
 			$(RMF) $(BUILD_DIR)
 			$(MAKE) clean -C libft
-			$(MAKE) clean -C ft_printf
 
 fclean:	clean
 			$(call SEPARATOR)
 			echo "$(BOLDBLUE)$(NAME) $(WHITE)fclean  $(YELLOW)..."
 			$(RM) $(NAME)
 			$(MAKE) fclean -C libft
-			$(MAKE) fclean -C ft_printf
 			$(call SEPARATOR)
 			echo "$(BOLDBLUE)$(NAME) $(WHITE)fclean  $(BOLDGREEN)done"
 

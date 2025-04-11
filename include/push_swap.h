@@ -6,14 +6,13 @@
 /*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:04:28 by teatime           #+#    #+#             */
-/*   Updated: 2025/04/02 18:44:15 by egache           ###   ########.fr       */
+/*   Updated: 2025/04/11 15:30:30 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "ft_printf.h"
 # include "libft.h"
 # include <fcntl.h>
 # include <stdlib.h>
